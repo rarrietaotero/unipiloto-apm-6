@@ -19,6 +19,7 @@ header{
 #container header{
     background: #af9f6d;
     border-bottom: 1px solid;
+    text-align: center;
 }
 
 #container header h1{
@@ -44,27 +45,63 @@ header{
 #container footer{
     background: #af9f6d;
 }
+     
+@media screen and (min-width: 992px) and (max-width: 1200px) {}
 
-@media screen and (min-width: 768px) and (max-width: 991px) {}
-
-@media screen and (max-width: 767px){
+@media screen and (min-width: 768px) and (max-width: 991px) {
     #container header{
-        background: #dd2120;
-        border-bottom: 1px solid;
-        padding: 8px;
-        text-align: center;
+        background: blue;
     }
 
+    #container #content article{
+        background: green;
+    }
+
+    #container footer{
+        background: yellow;
+    }
+}
+
+@media screen and (min-width: 465px) and (max-width: 767px) {
+    #container header h1{
+        font-size: 3em;
+        margin: 1em;
+}
+
+    #container header{
+        background: #E1BA0C;
+       
+    }
+
+    #container #content article{
+        background: #166977;
+        
+    }
+
+    #container footer{
+        background: #5BAB8D;
+    }
+}
+
+@media screen and (max-width: 464px) {
+    
     #container header h1{
         font-size: 4em;
-        margin: 1px;
-        color: #ffa1aa;
-
     }
 
     #container header p{
-        color: #087aff;
         font-size: 2em;
-        margin: 1em;
+    }
+
+    #container header{
+        background: #DF7401;
+    }
+
+    #container #content article{
+        background: #2EFE9A;
+    }
+
+    #container footer{
+        background: #5F04B4;
     }
 }

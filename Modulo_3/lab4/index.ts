@@ -1,7 +1,5 @@
-let a:string = "variable";
-let b: number = 5;
-let c:boolean = true;
 let d:Array<string> = ["a","b","c","d"];
-let e:any= {};
+let e:Array<any> = ["a",54,["Guayos","Zapatos"],true];
 
-console.log(a + " " + b + " " + c + " " + d +" " + e);
+console.log(d);
+console.log(e);

@@ -1,0 +1,10 @@
+<h1>{{ title }}</h1>
+<ul>
+  <li *ngFor="let conductor of conductores"
+     
+      (click)="onSelectDrivers(conductor)">
+    <span>{{conductor.name}}</span> {{conductor.lastname}}
+  </li>
+</ul>
+
+<conductor-detail [conductor]="selected_2"></conductor-detail>

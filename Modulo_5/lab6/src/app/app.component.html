@@ -1,0 +1,31 @@
+<h1>{{ title }}</h1>
+<ul>
+  <li *ngFor="let carro of carros">
+      <span>{{carro.brand}}</span> {{carro.model}}
+  </li>
+</ul>
+
+
+<ul *ngFor="let carro of carros">
+  <li>
+      <h2><span>{{carro.brand}}</span></h2> 
+      <span>{{carro.model}}</span> 
+      <span>{{carro.color}}</span> 
+      <span>{{carro.plate}}</span> 
+      <span>{{carro.capacity}}</span> 
+      <span>{{carro.build_year}}</span> 
+  </li>
+</ul>
+
+<h2>Propietarios</h2>
+<ul *ngFor="let propietario of propietarios">
+  <li>
+      <span>{{propietario.id}}</span><br />
+      <span>{{propietario.licencia}}</span> <br />
+      <span>{{propietario.first_name}}</span> 
+      <span>{{propietario.last_name}}</span> <br />
+      <span>{{propietario.age}}</span> 
+  </li>
+</ul>
+
+

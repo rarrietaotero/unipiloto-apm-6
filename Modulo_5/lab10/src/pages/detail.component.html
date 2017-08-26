@@ -1,0 +1,56 @@
+<div *ngIf="profesor">
+  <hr />
+  <label>Nombre: </label><br />
+  <input [(ngModel)]="profesor.name" placeholder="Nombre"><br />
+  <label>Apellido: </label><br />
+  <textarea [(ngModel)]="profesor.lastname" placeholder="Apellido"></textarea><br />
+  <label>Profesion: </label><br />
+  <input [(ngModel)]="profesor.profession" placeholder="Profesion"><br />
+  <label>Grado: </label><br />
+  <input [(ngModel)]="profesor.grade" placeholder="Grado"><br />
+  <label>Quantity: </label><br />
+  <input [(ngModel)]="profesor.group" placeholder="Grupo"><br />
+</div>
+
+<div *ngIf="estudiante">
+  <hr />
+  <label>Nombre: </label><br />
+  <input [(ngModel)]="estudiante.name" placeholder="Nombre"><br />
+  <label>Apellido: </label><br />
+  <textarea [(ngModel)]="estudiante.lastname" placeholder="Apellido"></textarea><br />
+  <label>Clase: </label><br />
+  <input [(ngModel)]="estudiante.clase" placeholder="Clase"><br />
+  <label>Grado: </label><br />
+  <input [(ngModel)]="estudiante.grade" placeholder="Grado"><br />
+  <label>Quantity: </label><br />
+  <input [(ngModel)]="estudiante.group" placeholder="Grupo"><br />
+</div>
+
+<div *ngIf="conductor">
+  <hr />
+  <label>Nombre: </label><br />
+  <input [(ngModel)]="conductor.name" placeholder="Nombre"><br />
+  <label>Apellido: </label><br />
+  <textarea [(ngModel)]="conductor.lastname" placeholder="Apellido"></textarea><br />
+  <label>Edad: </label><br />
+  <input [(ngModel)]="conductor.age" placeholder="Edad"><br />
+  <label>Licencia: </label><br />
+  <input [(ngModel)]="conductor.license" placeholder="Licencia"><br />
+  <label>Nacionalidad: </label><br />
+  <input [(ngModel)]="conductor.nacionalidad" placeholder="Nacionalidad"><br />
+</div>
+
+<div *ngIf="vehiculo">
+  <hr />
+  <label>Marca: </label><br />
+  <input [(ngModel)]="vehiculo.marca" placeholder="Marca"><br />
+  <label>Referencia: </label><br />
+  <textarea [(ngModel)]="vehiculo.referencia" placeholder="Referencia"></textarea><br />
+  <label>Color: </label><br />
+  <input [(ngModel)]="vehiculo.color" placeholder="Color"><br />
+  <label>Capacidad: </label><br />
+  <input [(ngModel)]="vehiculo.capacidad" placeholder="Capacidad"><br />
+  <label>Modelo: </label><br />
+  <input [(ngModel)]="vehiculo.modelo" placeholder="Modelo"><br />
+</div>
+

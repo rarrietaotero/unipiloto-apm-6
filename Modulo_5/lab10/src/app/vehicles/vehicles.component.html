@@ -1,0 +1,10 @@
+<h1>{{ title }}</h1>
+<ul>
+  <li *ngFor="let vehiculo of vehiculos"
+     
+      (click)="onSelectVehicles(vehiculo)">
+    <span>{{vehiculo.marca}}</span> {{vehiculo.referencia}}
+  </li>
+</ul>
+
+<vehiculo-detail [vehiculo]="selected_3"></vehiculo-detail>

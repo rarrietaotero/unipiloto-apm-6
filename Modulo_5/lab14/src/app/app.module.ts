@@ -4,12 +4,10 @@ import { FormsModule } from '@angular/forms';
 import {HttpModule} from "@angular/http";
 import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
 import { InMemoryProductService } from './mock/in-memory-product.service';
-import { InMemoryTeacherService } from './mock/in-memory-teacher.service';
 import { AppComponent } from './app.component';
 import { DetailComponent } from './detail/detail.component';
 
 import { ProductService } from './service/product.service';
-import { TeacherService } from './service/teacher.service';
 
 @NgModule({
   declarations: [
@@ -20,11 +18,9 @@ import { TeacherService } from './service/teacher.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryProductService),
-    InMemoryWebApiModule.forRoot(InMemoryTeacherService),
+    InMemoryWebApiModule.forRoot(InMemoryProductService)
   ],
-  providers: [ProductService,
-              TeacherService],
+  providers: [ProductService, InMemoryProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

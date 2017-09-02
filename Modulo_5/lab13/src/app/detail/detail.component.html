@@ -1,0 +1,27 @@
+<div *ngIf="product">
+    <hr />
+    <label>Name: </label><br />
+    <input [(ngModel)]="product.name" placeholder="name"><br />
+    <label>Description: </label><br />
+    <textarea [(ngModel)]="product.description" placeholder="description"></textarea><br />
+    <label>Type: </label><br />
+    <input [(ngModel)]="product.type" placeholder="tipo"><br />
+    <label>Price: </label><br />
+    <input [(ngModel)]="product.price" placeholder="precio"><br />
+    <label>Quantity: </label><br />
+    <input [(ngModel)]="product.quantity" placeholder="cantidad"><br />
+</div>
+
+<div *ngIf="profesor">
+    <hr />
+    <label>Nombre: </label><br />
+    <input [(ngModel)]="profesor.name" placeholder="Nombre"><br />
+    <label>Apellido: </label><br />
+    <textarea [(ngModel)]="profesor.lastname" placeholder="Apellido"></textarea><br />
+    <label>Profesion: </label><br />
+    <input [(ngModel)]="profesor.profession" placeholder="Profesion"><br />
+    <label>Grupo: </label><br />
+    <input [(ngModel)]="profesor.group" placeholder="Grupo"><br />
+    <label>Grado: </label><br />
+    <input [(ngModel)]="profesor.grade" placeholder="Grado"><br />
+</div>

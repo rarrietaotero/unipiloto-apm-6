@@ -1,25 +1,76 @@
-import {SalesInvoice} from "../models/sales-invoice";
-import {PRODUCTS} from "./product-mock";
+import {InMemoryDbService} from "angular2-in-memory-web-api";
 import {Product} from "../models/product";
 import {Customer} from "../models/customer";
-import {CUSTOMERS} from "./customer-mock";
+import {LineItem} from "../models/line-item";
+import {SalesInvoice} from "../models/sales-invoice";
 
-let _PRODUCTS: Product[] = PRODUCTS;
-let _CUSTOMERS: Customer[] = CUSTOMERS;
 
-export const SALES_INVOICES: SalesInvoice[] = [
-    {
+export class InMemoryDatosService implements InMemoryDbService {
+  createDb() {
+    let products: Array<Product> = [
+      {
         id: 1,
-        customer: _CUSTOMERS[0],
+        name: "Samsung galaxy 8",
+      },
+      {
+        id: 2,
+        name: "Samsung galaxy 10",
+      },
+      {
+        id: 3,
+        name: "Samsung galaxy 20",
+      }
+    ];
+
+    
+    let customers: Array<Customer> = [
+      {
+        id: 1,
+        name: "Alejandro Romero"
+      },
+      {
+        id: 2,
+        name: "Pedro Chin"
+      },
+      {
+        id: 3,
+        name: "Jaime Meluq"
+      }
+    ];
+
+    
+    let line_items: Array<LineItem> = [
+      {
+        id: 1,
+        productId: Product[0].id,
+        purchasePrice: 250000
+      },
+      {
+        id: 2,
+        productId: Product[1].id,
+        purchasePrice: 255000
+      },
+      {
+        id: 3,
+        productId: Product[2].id,
+        purchasePrice: 120000
+      }
+    ];
+
+   
+   let sales_invoices: Array<SalesInvoice> = [
+      {
+        id: 1,
+        customer: Customer[0],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             }
         ],
@@ -28,21 +79,21 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 2,
-        customer: _CUSTOMERS[0],
+        customer: Customer[0],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
@@ -51,16 +102,16 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 20,
-        customer: _CUSTOMERS[0],
+        customer: Customer[0],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
@@ -69,16 +120,16 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 19,
-        customer: _CUSTOMERS[0],
+        customer: Customer[0],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             }
         ],
@@ -87,21 +138,21 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 22,
-        customer: _CUSTOMERS[0],
+        customer: Customer[0],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
@@ -110,16 +161,16 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 200,
-        customer: _CUSTOMERS[1],
+        customer: Customer[1],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
@@ -128,16 +179,16 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 17,
-        customer: _CUSTOMERS[2],
+        customer: Customer[2],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             }
         ],
@@ -146,21 +197,21 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 29,
-        customer: _CUSTOMERS[0],
+        customer: Customer[0],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
@@ -169,16 +220,16 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 20,
-        customer: _CUSTOMERS[1],
+        customer: Customer[1],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
@@ -187,16 +238,16 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 41,
-        customer: _CUSTOMERS[1],
+        customer: Customer[1],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             }
         ],
@@ -205,21 +256,21 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 62,
-        customer: _CUSTOMERS[2],
+        customer: Customer[2],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
@@ -228,16 +279,16 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 220,
-        customer: _CUSTOMERS[0],
+        customer: Customer[0],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
@@ -246,16 +297,16 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 123,
-        customer: _CUSTOMERS[1],
+        customer: Customer[1],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             }
         ],
@@ -264,21 +315,21 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 223,
-        customer: _CUSTOMERS[0],
+        customer: Customer[0],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 2,
-                productId: _PRODUCTS[1].id,
+                productId: Product[1].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
@@ -287,20 +338,27 @@ export const SALES_INVOICES: SalesInvoice[] = [
     },
     {
         id: 2016,
-        customer: _CUSTOMERS[2],
+        customer: Customer[2],
         lineItems: [
             {
                 id: 1,
-                productId: _PRODUCTS[0].id,
+                productId: Product[0].id,
                 purchasePrice: 250000
             },
             {
                 id: 3,
-                productId: _PRODUCTS[2].id,
+                productId: Product[2].id,
                 purchasePrice: 120000
             }
         ],
         invoiceAmount:121213,
         tax: 16
     }
-];
+    ];
+
+    return {products, customers, line_items, sales_invoices};
+  }
+
+}
+
+

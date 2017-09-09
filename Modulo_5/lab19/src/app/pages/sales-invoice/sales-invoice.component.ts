@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SalesInvoice} from "../../models/sales-invoice";
+import {Router} from "@angular/router";
+import {SalesInvoiceService} from "../../services/sales-invoice.service";
 
 @Component({
   selector: 'app-sales-invoice',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesInvoiceComponent implements OnInit {
 
-  constructor() { }
+  title: string = "Sales invoice";
 
-  ngOnInit() {
+  selectedSalesInvoice: SalesInvoice;
+
+  salesInvoices: SalesInvoice[];
+
+  constructor(private router: Router, private salesInvoiceService: SalesInvoiceService) {}
+
+  getSalesInvoices() {
+    this.salesInvoiceService.getSalesInvoices().subscribe(salesInvoices => {this.salesInvoices = salesInvoices},
+
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
+  ngOnInit(): void {
+    this.getSalesInvoices();
+  }
+
+  onSelect(salesInvoice: SalesInvoice){
+    this.selectedSalesInvoice = salesInvoice;
+  }
+
+  gotoDetail(): void {
+    this.router.navigate(['sales-invoice/customer/detail/', this.selectedSalesInvoice.customer.id]);
   }
 
 }

@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {APP_BASE_HREF} from "@angular/common";
+import {HttpModule} from "@angular/http";
+import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
+import {InMemoryDatosService} from "./mocks/in-memory-datos.service";
+import {FormsModule} from "@angular/forms";
+import {AppRoutingModule} from "./app.routing";
+
 
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './pages/products/products.component';
@@ -12,8 +18,6 @@ import { SalesInvoiceDetailComponent } from './pages/sales-invoice-detail/sales-
 import {ProductsService} from "./services/products.service";
 import {CustomersService} from "./services/customers.service";
 import {SalesInvoiceService} from "./services/sales-invoice.service";
-import {FormsModule} from "@angular/forms";
-import {AppRoutingModule} from "./app.routing";
 
 @NgModule({
   declarations: [
@@ -28,6 +32,7 @@ import {AppRoutingModule} from "./app.routing";
   imports: [
     BrowserModule,
     FormsModule,
+     HttpModule,
     AppRoutingModule
   ],
   providers: [

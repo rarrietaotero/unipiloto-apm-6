@@ -1,0 +1,13 @@
+<div *ngIf="estudiante">
+    <hr />
+    <label>Nombre: </label><br />
+    <input [(ngModel)]="estudiante.name" placeholder="Nombre"><br />
+    <label>Apellido: </label><br />
+    <textarea [(ngModel)]="estudiante.lastname" placeholder="Apellido"></textarea><br />
+    <label>Clase: </label><br />
+    <input [(ngModel)]="estudiante.classes" placeholder="Clase"><br />
+    <label>Grado: </label><br />
+    <input [(ngModel)]="estudiante.grade" placeholder="Grado"><br />
+    <label>Grupo: </label><br />
+    <input [(ngModel)]="estudiante.group" placeholder="Grupo"><br />
+</div>

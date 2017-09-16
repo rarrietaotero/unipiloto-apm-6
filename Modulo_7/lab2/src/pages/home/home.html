@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mi Primera App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h1>{{ title }}</h1>
+<ul>
+  <li *ngFor="let estudiante of estudiantes">
+    <span>{{estudiante.name}}</span> {{estudiante.lastname}}
+  </li>
+</ul>
+
+</ion-content>

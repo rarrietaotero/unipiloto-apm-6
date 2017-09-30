@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profesores</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab top right edge>
+    <button ion-fab mini (click)="presentProfileModal2()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-list>
+    <button ion-item *ngFor="let profesor of profesores" (click)="selectedTeacher(profesor)">
+      {{profesor.name}} {{profesor.lastname}}
+    </button>
+  </ion-list>
+</ion-content>

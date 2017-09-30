@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ModalProfile2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar Profesor</ion-title>
+  </ion-navbar>
+
+</ion-header>
+	
+
+<ion-content padding>
+  <form [formGroup]="myForm_2" (ngSubmit)="dismiss()">
+    <ion-list>
+      <ion-item>
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label stacked>Nombre:</ion-label>
+        <ion-input formControlName="name" type="text" placeholder="Nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label stacked>Apellidos:</ion-label>
+        <ion-input formControlName="lastname" type="text" placeholder="Apellidos"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="clase" item-left></ion-icon>
+        <ion-label stacked>Cedula:</ion-label>
+        <ion-input formControlName="cedula" type="number" placeholder="Cedula"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="grade" item-left></ion-icon>
+        <ion-label stacked>Profesión:</ion-label>
+        <ion-input formControlName="profession" type="text" placeholder="Profesión"></ion-input>
+      </ion-item>
+     </ion-list>
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!myForm_2.valid">Guardar</button>
+    </div>
+  </form>
+</ion-content>

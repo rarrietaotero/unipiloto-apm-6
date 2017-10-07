@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar hideBackButton="false">
+    <ion-title>Detalle producto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<form [formGroup]="myForm_2" (ngSubmit)="saveForm2()">
+  <ion-list>
+    <ion-item>
+      <span>Id: </span><span>{{ product.id }}</span>
+    </ion-item>
+    
+    <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input formControlName="name" type="text" [ngModel]="product.name"></ion-input>
+      </ion-item>
+
+  </ion-list>
+  <button ion-button block type="submit" [disabled]="!myForm_2.valid">Actualizar</button>
+  </form>
+</ion-content>
